@@ -1,0 +1,17 @@
+type Education {
+    id: ID!
+    educationUnit: EducationUnit!
+    startAt: String!
+    endAt: String!
+    createdAt: String!
+    updatedAt: String!
+}
+
+extend type Query {
+    findAllEducations: [Education]!
+    countEducations: Int!
+}
+
+extend type Mutation {
+#    newEducation(startAt: String!, endAt: String!) : Education!
+}
