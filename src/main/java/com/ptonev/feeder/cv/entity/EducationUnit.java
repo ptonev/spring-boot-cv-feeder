@@ -28,7 +28,7 @@ public class EducationUnit {
     private String name;
 
     @JsonIgnoreProperties("educationUnit")
-    @OneToMany(mappedBy = "educationUnit", fetch = FetchType.LAZY,  cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "educationUnit", fetch = FetchType.EAGER,  cascade = CascadeType.ALL)
     private List<Education> educations = new ArrayList<>();
 
     @Column(name = "created_at")

@@ -1,11 +1,22 @@
 type EducationUnit {
     id: ID!
     name: String!
+    educations: [Education]!
     createdAt: String!
     updatedAt: String!
 }
 
+input EducationUnitInput {
+    name: String!
+}
+
+
 extend type Query {
     findAllEducationUnits: [EducationUnit]!
     countEducationUnits: Int!
+}
+
+extend type Mutation {
+    createEducationUnit(educationUnit: EducationUnitInput): EducationUnit!
+    deleteEducationUnit(id: String): Boolean!
 }
